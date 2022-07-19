@@ -12,7 +12,7 @@ if($do == "getcart"){
     if($inputIdUser == ""){
       $pesan = "Sorry! user cannot be empty!";
     } else {
-      include "../config.php";
+      include "config.php";
       $getCartNav = $conn->query("SELECT * FROM draftcart WHERE iduser = '".$inputIdUser."' ");
       $countCartNav = $getCartNav->num_rows;
       if($countCartNav == 0){
@@ -43,7 +43,7 @@ if($do == "getcart"){
     if($inputIdUser == ""){
       $pesan = "Sorry! security input cannot be empty!";
     } else {
-      include "../config.php";
+      include "config.php";
       //Declare Filter
       $filterCollection = "";
       $filterType = "";

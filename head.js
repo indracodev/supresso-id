@@ -1,6 +1,6 @@
-var webdir = "http://192.168.1.92/sgpoin/";
-var apidir = "http://192.168.1.92/sgpoin/filterbeta22/";
-var imgdir = "http://192.168.1.92/sgpoin/";
+var webdir = "http://192.168.1.92/supresso-id/";
+var apidir = "http://192.168.1.92/supresso-id/api/v1/";
+var imgdir = "http://192.168.1.92/supresso-id/";
 var keyword = "";
 
 printNavbar();
@@ -11,35 +11,20 @@ function printNavbar(){
   navbarHTML = `
   <div class="container">
 		<a class="navbar-brand non-menu" href="${webdir}index.php">
-			<img src="${webdir}img/ikon-supresso.svg" width="60" height="auto">
+			<img src="${webdir}webasset/ikon-supresso.svg" width="60" height="auto">
 		</a>
-
-		<!-- <div class="ml-auto d-xl-none">
-			<a class="btn btn-user-mobile" href="${webdir}login">
-				<img src="${webdir}img/ikon-user-dark.svg" class="nav-ikon img-fluid" width="19">
-			</a>
-			<a class="btn btn-cart-mobile position-relative" href="${webdir}cart">
-				<img src="${webdir}img/ikon-shopcart.svg" class="nav-ikon img-fluid" width="19">
-				<small id="cartval1" class="badge position-absolute text-white rounded-pill" style="top: 0; right: 0; background-color: #fd4f00;">0</small>
-			</a>
-		</div>
-		<button class="navbar-toggler border-0 pr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="width: 45px; height: 38px;">
-			<span></span>
-			<span></span>
-			<span></span>
-		</button> -->
 
 		<div class="ml-auto d-xl-none">
 			<a class="btn px-2 btn-user-mobile" href="${webdir}login">
-				<img src="${webdir}img/ikon-user-dark.svg" class="nav-ikon img-fluid" width="16" height="16">
+				<img src="${webdir}webasset/ikon-user-dark.svg" class="nav-ikon img-fluid" width="16" height="16">
 			</a>
 			<a class="btn px-2 btn-cart-mobile position-relative mr-2" href="${webdir}cart">
-				<img src="${webdir}img/tombolbaru/tombol-cart.svg" class="nav-ikon img-fluid" width="16" height="16">
+				<img src="${webdir}webasset/tombol-cart.svg" class="nav-ikon img-fluid" width="16" height="16">
 				<small id="cartval1" class="badge position-absolute text-white rounded-pill" style="top: 0; right: 0; background-color: #fd4f00;">0</small>
 			</a>
 		</div>
 		<button class="navbar-toggler border-0 pr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<img src="${webdir}img/tombolbaru/tombol-menu.svg" class="nav-ikon img-fluid" width="16" height="16">
+			<img src="${webdir}webasset/tombol-menu.svg" class="nav-ikon img-fluid" width="16" height="16">
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -142,10 +127,10 @@ function printNavbar(){
 				</button>
 			</form>
 			<a class="btn btn-user-desktop non-menu" href="${webdir}login">
-				<img src="${webdir}img/ikon-user-dark.svg" class="nav-ikon img-fluid" width="16">
+				<img src="${webdir}webasset/ikon-user-dark.svg" class="nav-ikon img-fluid" width="16">
 			</a>
 			<a class="btn btn-cart-desktop position-relative non-menu" href="${webdir}cart">
-				<img src="${webdir}img/ikon-shopcart.svg" class="nav-ikon img-fluid" width="16">
+				<img src="${webdir}webasset/ikon-shopcart.svg" class="nav-ikon img-fluid" width="16">
 				<small id="cartval0" class="badge position-absolute text-white rounded-pill" style="top: 0; right: 0; background-color: #fd4f00; font-size: 65%;">0</small>
 			</a>
 		</div>
@@ -178,7 +163,7 @@ function printFooter(){
     <div class="container">
       <p class="mb-5" style="display:none;">
         <a href="index.php">
-          <img src="${webdir}img/logo-supresso.svg" class="img-fluid" width="120px">
+          <img src="${webdir}webasset/logo-supresso.svg" class="img-fluid" width="120px">
         </a>
       </p>
       <p class="mb-5 footer-menu">
@@ -198,16 +183,16 @@ function printFooter(){
       </p>
       <p class="mb-5">
         <a href="https://twitter.com/supressocoffee" target="_blank" style="text-decoration: none;">
-          <img src="${webdir}img/ikon-twitter.svg" class="img-fluid" width="30px">
+          <img src="${webdir}webasset/ikon-twitter.svg" class="img-fluid" width="30px">
         </a>&nbsp;&nbsp;&nbsp;
         <a href="https://www.facebook.com/supresso.sg" target="_blank" style="text-decoration: none;">
-          <img src="${webdir}img/ikon-facebook.svg" class="img-fluid" width="30px">
+          <img src="${webdir}webasset/ikon-facebook.svg" class="img-fluid" width="30px">
         </a>&nbsp;&nbsp;&nbsp;
         <a href="https://www.instagram.com/supresso.sg/" target="_blank" style="text-decoration: none;">
-          <img src="${webdir}img/ikon-instagram.svg" class="img-fluid" width="30px">
+          <img src="${webdir}webasset/ikon-instagram.svg" class="img-fluid" width="30px">
         </a>&nbsp;&nbsp;&nbsp;
         <a href="https://youtu.be/B4neOXusn2k" target="_blank" style="text-decoration: none;">
-          <img src="${webdir}img/ikon-youtube.svg" class="img-fluid" width="30px">
+          <img src="${webdir}webasset/ikon-youtube.svg" class="img-fluid" width="30px">
         </a>
       </p>
     </div>

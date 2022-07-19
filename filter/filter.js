@@ -27,7 +27,7 @@ $(document).ready(function() {
 const filterarr = [];
 const filterarrfix = [];
 var sortby = "";
-
+var defaultdir = "../";
 //Auto Load Functions
 navigationCart();
 
@@ -37,12 +37,12 @@ function navigationCart(){
 	if(userid == "" || userid == 0){
 		showMsg("No user detected!");
 		setTimeout(function(){
-			window.location.href = "../";
+			window.location.href = defaultdir;
 		},500);
 	} else {
 		try{
 			$.ajax({
-        url: 'filter-api.php?do=getcart',
+        url: apidir + 'filter-api.php?do=getcart',
         type: 'POST',
         headers: {
         },
@@ -201,7 +201,7 @@ function filterSendAjax(){
 		var filtertojson = JSON.stringify(filterarrfix);
 		try{
 			$.ajax({
-				url: 'filter-api.php?do=getitems',
+				url: apidir + 'filter-api.php?do=getitems',
 				type: 'POST',
 				headers: {
 				},
@@ -327,7 +327,7 @@ function filterSendAjax(){
 										var productCache = `
 										<div class="col-6 col-md-4 col-lg-3 filterprodukcore">
 										  <div class="kolom-produk mb-4 mb-lg-0">
-										    <a href="../detail/?idpro=${resultParse.products[pid].code}" class="foto-produk d-block" style="position: relative;  min-height:166px;">
+										    <a href="${defaultdir}detail/?idpro=${resultParse.products[pid].code}" class="foto-produk d-block" style="position: relative;  min-height:166px;">
 										      <img loading="lazy" src="https://www.supresso.com/id/img/${resultParse.products[pid].img}" class="img-fluid">
 										    </a>
 										    <ul class="spesifikasi-produk">
