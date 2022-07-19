@@ -120,7 +120,22 @@ if($do == "getcart"){
       if($filterPromo != ""){
         $sql = $sql."AND hargadiskon IS NOT NULL ";
       }
-
+      //Sort By
+      if($inputSortBy != ""){
+        if($inputSortBy == "spe:latest"){
+          $sql = $sql."ORDER BY idproduk DESC";
+        } else if($inputSortBy == "spe:popular"){
+          $sql = $sql."ORDER BY idcustomurutan ASC";
+        } else if($inputSortBy == "price:high"){
+          $sql = $sql."ORDER BY harga DESC";
+        } else if($inputSortBy == "price:low"){
+          $sql = $sql."ORDER BY harga ASC";
+        } else {
+          $sql = $sql."ORDER BY rand()";
+        }
+      } else {
+        $sql = $sql."ORDER BY rand()";
+      }
       /*
       echo "SQL : ".$sql;
       echo "<br>==================<br>";

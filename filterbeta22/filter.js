@@ -92,7 +92,6 @@ function applyFilter(code){
 
 function applyOrderby(code){
 	sortby = code;
-	console.log(sortby);
 }
 
 function printFilterFront(){
@@ -216,10 +215,9 @@ function filterSendAjax(){
 	        var resultStatus = resultParse.status;
 	        var resultMessage = resultParse.message;
 					if(resultStatus === "Success"){
-						console.log(result);
 						var productcount = resultParse.products.length;
 						if(productcount == 0){
-							document.getElementById("fetchproduct").innerHTML = `- No Result -`;
+							document.getElementById("fetchproduct").innerHTML = `<div style="width:100%; text-align:center;font-size:1.5rem; animation: 1s ease-out 0s 1 slideInFromLeft;"><i class="bi bi-search"></i> No Result</div>`;
 						} else {
 							var productsHTML = ``;
 							var pid = 0;
@@ -368,5 +366,9 @@ function filterSendAjax(){
 		}
 	}
 }
+
+
+//Custom Request
+applyFixFilterFront();
 
 closeLoad();
