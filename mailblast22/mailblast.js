@@ -361,3 +361,37 @@ function unsetGroup(code){
     }
   }
 }
+
+function openSure(){
+  var msgcontainersure = document.getElementById("msgcontainersure");
+  var msgcoresure = document.getElementById("msgcoresure");
+  msgcontainersure.style.opacity = "1";
+  msgcontainersure.style.visibility = "visible";
+  msgcoresure.style.transform = "translateY(0px)";
+}
+
+function closeSure(){
+  var msgcontainersure = document.getElementById("msgcontainersure");
+  var msgcoresure = document.getElementById("msgcoresure");
+  msgcontainersure.style.opacity = "0";
+  msgcontainersure.style.visibility = "hidden";
+  msgcoresure.style.transform = "translateY(-50px)";
+}
+
+function beginBlast(){
+  if(webnow == ""){
+    showMsg("Web not selected!");
+  } else {
+    if(webnow == "Supresso ID"){
+      window.location.href = "blast/supressoid/";
+    } else if(webnow == "Supresso SG"){
+      window.location.href = "blast/supressosg/";
+    } else if(webnow == "Pandangarden"){
+      window.location.href = "blast/pandangarden/";
+    } else if(webnow == "Indracostore"){
+      window.location.href = "blast/indracostore/";
+    } else {
+      showMsg("Unable to blast! Unidentified website!");
+    }
+  }
+}
