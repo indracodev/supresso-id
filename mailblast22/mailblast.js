@@ -57,7 +57,7 @@ function getWebData(){
             if(countmailready == 0){
               document.getElementById("datafetch").innerHTML = `
               <tr>
-                <th style="background-color: rgba(255,255,255,.5);"></th>
+                <th style="background-color: rgba(255,255,255,.5); width:50px;"></th>
                 <th>Email</th>
                 <th>Status</th>
                 <th style="background-color: rgba(255,255,255,.5); width:30px;"></th>
@@ -70,7 +70,7 @@ function getWebData(){
               var pid = 0;
               var tableHTML = `
               <tr>
-                <th style="background-color: rgba(255,255,255,.5);"></th>
+                <th style="background-color: rgba(255,255,255,.5); width:50px;"></th>
                 <th>Email</th>
                 <th>Status</th>
                 <th style="background-color: rgba(255,255,255,.5); width:30px;"></th>
@@ -144,7 +144,7 @@ function changeStatus(id){
               <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
             </svg>
             `;
-            showMsg(resultMessage);
+            //showMsg(resultMessage);
             getWebData();
           } else {
             showMsg(resultMessage);
@@ -261,7 +261,7 @@ function addDestination(id){
               <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
             </svg>
             `;
-            showMsg(resultMessage);
+            //showMsg(resultMessage);
             getDestination();
             getWebData();
           } else {

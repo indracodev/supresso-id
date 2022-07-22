@@ -57,6 +57,7 @@ function checkData(){
         var resultStatus = resultParse.status;
         var resultMessage = resultParse.message;
         if(resultStatus === "Success"){
+          clearView();
           var countdata = resultParse.ready.length;
           if(countdata == 0){
             window.location.href = "success.html";
@@ -83,6 +84,14 @@ function checkData(){
   }
 }
 
+function clearView(){
+  document.getElementById("statusemail").innerHTML = "Loading...";
+  document.getElementById("statusname").innerHTML = "Loading...";
+  document.getElementById("statushost").innerHTML = "Loading...";
+  document.getElementById("statusrelay").innerHTML = "Loading...";
+  document.getElementById("statusstat").innerHTML = "Loading...";
+}
+
 function doSend(){
   try{
     $.ajax({
@@ -105,13 +114,13 @@ function doSend(){
           document.getElementById("statusrelay").innerHTML = targetrelay;
           setTimeout(function(){
             checkData();
-          }, 7000);
+          }, 3000);
         } else {
           document.getElementById("statusstat").innerHTML = "Error API!";
           console.log(resultMessage);
           setTimeout(function(){
             checkData();
-          }, 7000);
+          }, 3000);
         }
       },
       error: function(error){
