@@ -27,8 +27,10 @@ $(document).ready(function() {
 const filterarr = [];
 const filterarrfix = [];
 var sortby = "";
-var defaultdir = "../";
+var defaultdir = "../../../";
 //Auto Load Functions
+applyFilter("Collection:Single Origin");
+applyFilter("Packaging:Capsule");
 navigationCart();
 
 
@@ -222,17 +224,36 @@ function filterSendAjax(){
 							var productsHTML = ``;
 							var pid = 0;
 							while(pid < productcount){
+								//Harga view
+						    var hargaproductori = resultParse.products[pid].price;
+						    var hargaproduct = parseFloat(hargaproductori);
+						    if(hargaproduct >= 1000){
+									var hargaview = formatMoney(hargaproduct);
+						    } else {
+									var hargaview = hargaproduct;
+						    }
+
+
 								var hargadiskon = resultParse.products[pid].discountprice;
 								var thisstock = resultParse.products[pid].stock;
 								var thisstockdoub = parseFloat(thisstock);
 								if(hargadiskon != null){
+									//Discount Conversion
+								    var hargadiskondouble = parseFloat(hargadiskon);
+								    if(hargadiskondouble >= 1000){
+								        var hargadiskonview =  hargadiskon;
+								    } else {
+								        var hargadiskonview =  formatMoney(hargadiskon);
+								    }
 									if(thisstockdoub == 0){
 										//If discount is not null and stock is empty
 										var productCache = `
 										<div class="col-6 col-md-4 col-lg-3 filterprodukcore">
 										  <div class="kolom-produk mb-4 mb-lg-0">
 										    <div class="foto-produk d-block" style="position: relative; min-height:166px;">
-										      <img loading="lazy" src="https://www.supresso.com/id/img/${resultParse.products[pid].img}" class="img-fluid" style = "opacity:.5">
+													<a href="${defaultdir}detail/?idpro=${resultParse.products[pid].code}" class="foto-produk d-block" style="position: relative;  min-height:166px;">
+										      	<img loading="lazy" src="https://www.supresso.com/id/img/${resultParse.products[pid].img}" class="img-fluid" style = "opacity:.5">
+													</a>
 										      <div class="area-promo" style="position: absolute;  bottom: 8.5%; right: 14%;">
 										        <div class="diskon rounded-circle text-light d-flex justify-content-center align-items-center gotham-medium" style="width: 38px; height: 38px; background: #fd4f00; transForm: scale(1);">
 										          ${resultParse.products[pid].discountcalls}
@@ -247,13 +268,13 @@ function filterSendAjax(){
 										      <li class="kemasan-produk">${resultParse.products[pid].undername}
 										      </li>
 										      <li + displaybiasa + class="harga-produk">
-										        <span class="kurs">$</span>
-										        <span class="nominal">${resultParse.products[pid].price}</span>
+										        <span class="kurs">Rp</span>
+										        <span class="nominal">${hargaview},-</span>
 										      </li>
 										      <li class="harga-promo d-sm-flex justify-content-center align-items-center">
-										        <p class="mb-0 mr-sm-2" style="color: #fd4f00;"><span  class="mr-1">$</span><span  + displaydiskon +  >${resultParse.products[pid].discountprice}</span></p>
+										        <p class="mb-0 mr-sm-2" style="color: #fd4f00;"><span  class="mr-1">$</span><span>${hargadiskonview}</span></p>
 										        <div style="position: relative; display: inline-flex;">
-										          <span + displaydiskon +  class="mr-1">$</span><span  + displaydiskon + >${resultParse.products[pid].price}</span>
+										          <span class="mr-1">Rp</span><span>${hargaview}</span>
 										          <hr class="border-danger m-0 w-100" style="position: absolute; top: 50%; left: 50%; transForm: translate(-50%, -50%);">
 										        </div>
 										      </li>
@@ -267,7 +288,9 @@ function filterSendAjax(){
 										<div class="col-6 col-md-4 col-lg-3 filterprodukcore">
 										  <div class="kolom-produk mb-4 mb-lg-0">
 										    <div class="foto-produk d-block" style="position: relative; min-height:166px;">
-										      <img loading="lazy" src="https://www.supresso.com/id/img/${resultParse.products[pid].img}" class="img-fluid">
+													<a href="${defaultdir}detail/?idpro=${resultParse.products[pid].code}" class="foto-produk d-block" style="position: relative;  min-height:166px;">
+										      	<img loading="lazy" src="https://www.supresso.com/id/img/${resultParse.products[pid].img}" class="img-fluid">
+													</a>
 										      <div class="area-promo" style="position: absolute;  bottom: 8.5%; right: 14%;">
 										        <div class="diskon rounded-circle text-light d-flex justify-content-center align-items-center gotham-medium" style="width: 38px; height: 38px; background: #fd4f00; transForm: scale(1);">
 										          ${resultParse.products[pid].discountcalls}
@@ -282,13 +305,13 @@ function filterSendAjax(){
 										      <li class="kemasan-produk">${resultParse.products[pid].undername}
 										      </li>
 										      <li + displaybiasa + class="harga-produk">
-										        <span class="kurs">$</span>
-										        <span class="nominal">${resultParse.products[pid].price}</span>
+										        <span class="kurs">Rp</span>
+										        <span class="nominal">${hargaview},-</span>
 										      </li>
 										      <li class="harga-promo d-sm-flex justify-content-center align-items-center">
-										        <p class="mb-0 mr-sm-2" style="color: #fd4f00;"><span  class="mr-1">$</span><span  + displaydiskon +  >${resultParse.products[pid].discountprice}</span></p>
+										        <p class="mb-0 mr-sm-2" style="color: #fd4f00;"><span  class="mr-1">Rp</span><span>${hargadiskonview},-</span></p>
 										        <div style="position: relative; display: inline-flex;">
-										          <span + displaydiskon +  class="mr-1">$</span><span  + displaydiskon + >${resultParse.products[pid].price}</span>
+										          <span class="mr-1">Rp</span><span>${hargaview},-</span>
 										          <hr class="border-danger m-0 w-100" style="position: absolute; top: 50%; left: 50%; transForm: translate(-50%, -50%);">
 										        </div>
 										      </li>
@@ -307,7 +330,9 @@ function filterSendAjax(){
 										<div class="col-6 col-md-4 col-lg-3 filterprodukcore">
 										  <div class="kolom-produk mb-4 mb-lg-0">
 										    <div class="foto-produk d-block" style="position: relative; min-height:166px; opacity:0.5;">
-										      <img loading="lazy" src="https://www.supresso.com/id/img/${resultParse.products[pid].img}" class="img-fluid">
+													<a href="${defaultdir}detail/?idpro=${resultParse.products[pid].code}" class="foto-produk d-block" style="position: relative;  min-height:166px;">
+										      	<img loading="lazy" src="https://www.supresso.com/id/img/${resultParse.products[pid].img}" class="img-fluid">
+													</a>
 										    </div>
 										    <ul class="spesifikasi-produk">
 										      <li class="nama-produk">${resultParse.products[pid].name}
@@ -315,8 +340,8 @@ function filterSendAjax(){
 										      <li class="kemasan-produk">${resultParse.products[pid].undername}
 										      </li>
 										      <li + displaybiasa + class="harga-produk">
-										        <span class="kurs">$</span>
-										        <span class="nominal">${resultParse.products[pid].price}</span>
+										        <span class="kurs">Rp</span>
+										        <span class="nominal">${hargaview},-</span>
 										      </li>
 										    </ul>
 										  </div>
@@ -336,8 +361,8 @@ function filterSendAjax(){
 										      <li class="kemasan-produk">${resultParse.products[pid].undername}
 										      </li>
 										      <li + displaybiasa + class="harga-produk">
-										        <span class="kurs">$</span>
-										        <span class="nominal">${resultParse.products[pid].price}</span>
+										        <span class="kurs">Rp</span>
+										        <span class="nominal">${hargaview},-</span>
 										      </li>
 										    </ul>
 										    <button class="tombol-cart btn" data-toggle="modal" data-target="#popCart" data-id="">
@@ -367,8 +392,16 @@ function filterSendAjax(){
 	}
 }
 
+function formatMoney(angka) {
+    var rupiah = '';
+	var angkarev = angka.toString().split('').reverse().join('');
+	for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+	return rupiah.split('',rupiah.length-1).reverse().join('');
+}
 
 //Custom Request
-applyFixFilterFront();
+setTimeout(function(){
+    applyFixFilterFront();
+}, 1000);
 
 closeLoad();

@@ -1,14 +1,18 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head lang="en" id="head">
 	<title>Filters | Supresso</title>
-	<link rel="stylesheet icon" href="../webasset/ikon-supresso.svg">
+	<link rel="stylesheet icon" href="../../../img/ikon-supresso.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="../component/bootstrap.min.css">
-	<link rel="stylesheet" href="../head.css">
-	<link rel="stylesheet" href="filter.css">
+	<link rel="stylesheet" href="../../component/bootstrap.min.css">
+	<link rel="stylesheet" href="../../head.css">
+	<link rel="stylesheet" href="../../filter.css">
 </head>
 <body>
 
@@ -130,6 +134,12 @@
 												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Assorted")' id="CollectionAssorted">
 												<label class="form-check-label" for="defaultCheck26">
 													Assorted
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Bundle")' id="CollectionAssorted">
+												<label class="form-check-label" for="defaultCheck26">
+													Bundles
 												</label>
 											</div>
 										</div>
@@ -359,14 +369,20 @@
 
 	</main>
 	<footer class="text-center small" style="padding-top:80px" id="footer"></footer>
-
+    <?php
+	if(!isset($_SESSION["Idusernya"]) || $_SESSION["Idusernya"] == ""){
+        $cacheid = session_id();
+    } else {
+        $cacheid = $_SESSION["Idusernya"];
+    }
+	?>
 	<script>
-	var userid = 66;
+	var userid = '<?php echo $cacheid ?>';
 	</script>
 
-	<script type="text/javascript" src="../component/jquery.js"></script>
-	<script type="text/javascript" src="../component/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../head.js"></script>
+	<script type="text/javascript" src="../../component/jquery.js"></script>
+	<script type="text/javascript" src="../../component/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../head.js"></script>
 	<script type="text/javascript" src="filter.js"></script>
 	<script type="text/javascript">
 		// [].forEach.cal(ldocument.querySelectorAll("*"), function(a){a.style.outline="1px solid green";})
