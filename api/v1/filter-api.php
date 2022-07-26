@@ -136,23 +136,6 @@ if($do == "getcart"){
       } else {
         $sql = $sql."ORDER BY rand()";
       }
-      /*
-      echo "SQL : ".$sql;
-      echo "<br>==================<br>";
-      echo "Collection : ".$filterCollection;
-      echo "<br>===========<br>";
-      echo "Type : ".$filterType;
-      echo "<br>===========<br>";
-      echo "Form : ".$filterForm;
-      echo "<br>===========<br>";
-      echo "Packaging : ".$filterPackaging;
-      echo "<br>===========<br>";
-      echo "Weight : ".$filterWeight;
-      echo "<br>===========<br>";
-      echo "Promo : ".$filterPromo;
-      echo "<br>===========<br>";
-      */
-
       $getProducts = $conn->query($sql);
       $countProducts = $getProducts->num_rows;
       if($countProducts == 0){
@@ -175,6 +158,8 @@ if($do == "getcart"){
       $pesan = "Data loaded!";
     }
   }
+} else if($do == "getproductdata"){
+  
 } else {
   $pesan = "Sorry! no action detected!";
 }

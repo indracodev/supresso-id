@@ -6,7 +6,7 @@ session_start();
 <html>
 <head lang="en" id="head">
 	<title>Filters | Supresso</title>
-	<link rel="stylesheet icon" href="../../../img/ikon-supresso.png">
+	<link rel="stylesheet icon" href="../../img/ikon-supresso.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
@@ -81,238 +81,9 @@ session_start();
 										</div>
 									</div>
 								</div>
-
 								<hr class="d-none d-lg-block">
-
-								<div class="row justify-content-md-between justify-content-xl-around">
-									<div class="col-6 col-md-auto col-lg-auto">
-										<h6 class="gotham-bold mb-3">Collection</h6>
-										<div class="form-group">
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Single Origin")' id="CollectionSingleOrigin">
-												<label class="form-check-label" for="defaultCheck1">
-													Single Origin
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Luwak Prestige")' id="CollectionLuwakPrestige">
-												<label class="form-check-label" for="defaultCheck2">
-													Luwak Prestige
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Organic")' id="CollectionOrganic">
-												<label class="form-check-label" for="defaultCheck3">
-													Organic
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Rainforest")' id="CollectionRainforest">
-												<label class="form-check-label" for="defaultCheck4">
-													Rainforest
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Gourmet")' id="CollectionGourmet">
-												<label class="form-check-label" for="defaultCheck5">
-													Gourmet
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:World Blend")' id="CollectionWorldBlend">
-												<label class="form-check-label" for="defaultCheck6">
-													World Blend
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Balicafe")' id="CollectionBalicafe">
-												<label class="form-check-label" for="defaultCheck25">
-													Balicafé
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Assorted")' id="CollectionAssorted">
-												<label class="form-check-label" for="defaultCheck26">
-													Assorted
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Collection:Bundle")' id="CollectionAssorted">
-												<label class="form-check-label" for="defaultCheck26">
-													Bundles
-												</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-6 col-md-auto col-lg-auto">
-										<h6 class="gotham-bold mb-3">Type</h6>
-										<div class="form-group">
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Type:Arabica")' id="TypeArabica">
-												<label class="form-check-label" for="defaultCheck7">
-													Arabica
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Type:Robusta")' id="TypeRobusta">
-												<label class="form-check-label" for="defaultCheck8">
-													Robusta
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Type:Blend")' id="TypeBlend">
-												<label class="form-check-label" for="defaultCheck9">
-													Blend
-												</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-6 col-md-auto col-lg-auto">
-										<h6 class="gotham-bold mb-3">Form</h6>
-										<div class="form-group">
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Form:Beans")' id="FormBeans">
-												<label class="form-check-label" for="defaultCheck10">
-													Beans
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Form:Ground")' id="FormGround">
-												<label class="form-check-label" for="defaultCheck11">
-													Ground
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Form:Drip")' id="FormDrip">
-												<label class="form-check-label" for="defaultCheck12">
-													Drip
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Form:Capsules")' id="FormCapsules">
-												<label class="form-check-label" for="defaultCheck13">
-													Capsules
-												</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-6 col-md-auto col-lg-auto">
-										<h6 class="gotham-bold mb-3">Packaging</h6>
-										<div class="form-group">
-											<div class="form-check">
-												<input class="form-check-input" onclick='applyFilter("Packaging:Can")' type="checkbox" id="PackagingCan">
-												<label class="form-check-label" for="defaultCheck14">
-													Can
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" onclick='applyFilter("Packaging:Pouch")' type="checkbox" id="PackagingPouch">
-												<label class="form-check-label" for="defaultCheck15">
-													Pouch
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" onclick='applyFilter("Packaging:Drip")' type="checkbox" id="PackagingDrip">
-												<label class="form-check-label" for="defaultCheck16">
-													Drip
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" onclick='applyFilter("Packaging:Capsule")' type="checkbox" id="PackagingCapsule">
-												<label class="form-check-label" for="defaultCheck17">
-													Capsule
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" onclick='applyFilter("Packaging:Box")' type="checkbox" id="PackagingBox">
-												<label class="form-check-label" for="defaultCheck18">
-													Box
-												</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-6 col-md-auto col-lg-auto">
-										<h6 class="gotham-bold mb-3">Weight</h6>
-										<div class="form-group">
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Weight:50g")' id="Weight50g">
-												<label class="form-check-label" for="defaultCheck19">
-													50g
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Weight:60g")' id="Weight60g">
-												<label class="form-check-label" for="defaultCheck20">
-													60g
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Weight:100g")' id="Weight100g">
-												<label class="form-check-label" for="defaultCheck21">
-													100g
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Weight:200g")' id="Weight200g">
-												<label class="form-check-label" for="defaultCheck22">
-													200g
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Weight:500g")' id="Weight500g">
-												<label class="form-check-label" for="defaultCheck23">
-													500g
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Weight:1000g")' id="Weight1000g">
-												<label class="form-check-label" for="defaultCheck24">
-													1000g
-												</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-6 col-md-auto col-lg-auto">
-										<h6 class="gotham-bold mb-3">Promo</h6>
-										<div class="form-group">
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" onclick='applyFilter("Promo:Offer")' id="PromoOffer">
-												<label class="form-check-label" for="defaultCheck27">
-													Offer
-												</label>
-											</div>
-										</div>
-									</div>
-
-									<div class="col-auto border-right d-none d-xl-block"></div>
-
-									<div class="col-12 col-xl-auto">
-										<hr class="d-xl-none">
-										<h6 class="gotham-bold mb-3">Sortby</h6>
-										<div class="form-group">
-											<div class="form-check">
-												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" onclick='applyOrderby("spe:latest")'>
-												<label class="form-check-label" for="inlineRadio1">Latest Products</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" onclick='applyOrderby("spe:popular")'>
-												<label class="form-check-label" for="inlineRadio2">Popular Products</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" onclick='applyOrderby("price:high")'>
-												<label class="form-check-label" for="inlineRadio3">Highest Prices</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" onclick='applyOrderby("price:low")'>
-												<label class="form-check-label" for="inlineRadio4">Lowes Prices</label>
-											</div>
-										</div>
-									</div>
+								<div class="row justify-content-md-between justify-content-xl-around" id="filterdiv">
+									Loading...
 								</div>
 							</div>
 						</div>
@@ -366,8 +137,157 @@ session_start();
 				</div>
 			</div>
 		</div>
-
 	</main>
+
+	<!-- Modal Add To Cart -->
+	<div class="modal d-block show" id="addtocartcontainer" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" style="background-color: rgba(0,0,0,.35); opacity:0; transition: all 0.5s; visibility:hidden;">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable mx-md-3 mx-lg-auto" style="max-width: 860px; transform:translateY(-50px); transition: all 0.5s;" id="addtocartcore">
+			<div class="modal-content">
+				<div class="modal-header border-0">
+					<button type="button" class="close" onclick='hideAddToCart()'>
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center px-md-5">
+					<div class="row justify-content-center align-items-center">
+						<div class="col-10 col-md-5 col-xl-4">
+							<div class="kolom-produk">
+								<a href="https://supresso.com/sg/detail.php" class="foto-produk">
+									<img src="https://supresso.com/sg/img/foto-produk.png" class="img-fluid">
+								</a>
+								<ul class="spesifikasi-produk list-unstyled text-capitalize gotham-bold">
+									<li class="nama-produk">bali kintamani</li>
+									<li class="kemasan-produk">cans 200gr</li>
+									<li class="harga-produk d-flex justify-content-center">
+										<span class="kurs mr-2">S$</span>
+										<span class="nominal">20</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-12 jeda2 d-md-none"></div>
+						<div class="col-md-7 col-xl-8 text-md-left">
+							<h3 class="nama-produk gotham-bold text-capitalize">
+								bali kintamani
+							</h3>
+							<p>
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500=
+								s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+							</p>
+							<div class="qty-produk d-flex justify-content-center justify-content-md-start align-items-center">
+								<button class="p-0 border-0 rounded-circle" style="width: 1.6rem; background-color: inherit;">
+									<img src="https://supresso.com/sg/img/minus-o.svg" class="img-fluid">
+								</button>
+								<input value="1" class="text-center border-0 gotham-bold" style="font-size: 150%; max-width: 100px;">
+								<button class="p-0 border-0 rounded-circle" style="width: 1.6rem; background-color: inherit;">
+									<img src="https://supresso.com/sg/img/plus-o.svg" class="img-fluid">
+								</button>
+							</div>
+							<div class="jeda2"></div>
+						</div>
+						<div class="col-12">
+							<hr class="border-dark opacity-50">
+							<ul class="list-unstyled m-0 gotham-bold d-md-flex justify-content-between">
+								<li>1 item added to your Cart</li>
+								<li>Subtotal S$ 50</li>
+							</ul>
+							<hr class="border-dark opacity-50">
+						</div>
+						<div class="col-12">
+							<div class="row justify-content-between">
+								<div class="col-6">
+									<a href="https://supresso.com/sg/kategori.php" class="btn btn-secondary d-block">
+										<span class="fa fa-angle-left fa-lg pr-3 d-none d-md-inline"></span>
+										<span class="d-md-none">Continue <br> Shopping</span>
+										<span class="d-none d-md-inline">Continue Shopping</span>
+									</a>
+								</div>
+								<div class="col-6">
+									<a href="https://supresso.com/sg/cart.php" class="btn btn-orange d-block">
+										Shopping Cart &amp; Checkout
+										<span class="fa fa-angle-right fa-lg pl-3 d-none d-md-inline"></span>
+									</a>
+								</div>
+								<div class="col-12 gotham-bold text-center">
+									<div class="jeda2"></div>
+									<h6 class="m-0">BEFORE YOU COMPLETE YOUR PURCHASE, CONSIDER</h6>
+									<div class="jeda2"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-9">
+							<div class="row">
+								<div class="col-6 col-md">
+									<div class="kolom-produk">
+										<a href="https://supresso.com/sg/detail.php" class="foto-produk">
+											<img src="https://supresso.com/sg/img/foto-produk.png" class="img-fluid">
+										</a>
+										<ul class="spesifikasi-produk list-unstyled text-capitalize gotham-bold">
+											<li class="nama-produk">bali kintamani</li>
+											<li class="kemasan-produk">cans 200gr</li>
+											<li class="harga-produk d-flex justify-content-center">
+												<span class="kurs mr-2">S$</span>
+												<span class="nominal">20</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-6 col-md">
+									<div class="kolom-produk">
+										<a href="https://supresso.com/sg/detail.php" class="foto-produk">
+											<img src="https://supresso.com/sg/img/foto-produk.png" class="img-fluid">
+										</a>
+										<ul class="spesifikasi-produk list-unstyled text-capitalize gotham-bold">
+											<li class="nama-produk">bali kintamani</li>
+											<li class="kemasan-produk">cans 200gr</li>
+											<li class="harga-produk d-flex justify-content-center">
+												<span class="kurs mr-2">S$</span>
+												<span class="nominal">20</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-6 col-md">
+									<div class="kolom-produk">
+										<a href="https://supresso.com/sg/detail.php" class="foto-produk">
+											<img src="https://supresso.com/sg/img/foto-produk.png" class="img-fluid">
+										</a>
+										<ul class="spesifikasi-produk list-unstyled text-capitalize gotham-bold">
+											<li class="nama-produk">bali kintamani</li>
+											<li class="kemasan-produk">cans 200gr</li>
+											<li class="harga-produk d-flex justify-content-center">
+												<span class="kurs mr-2">S$</span>
+												<span class="nominal">20</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-6 col-md d-md-none">
+									<div class="kolom-produk">
+										<a href="https://supresso.com/sg/detail.php" class="foto-produk">
+											<img src="https://supresso.com/sg/img/foto-produk.png" class="img-fluid">
+										</a>
+										<ul class="spesifikasi-produk list-unstyled text-capitalize gotham-bold">
+											<li class="nama-produk">bali kintamani</li>
+											<li class="kemasan-produk">cans 200gr</li>
+											<li class="harga-produk d-flex justify-content-center">
+												<span class="kurs mr-2">S$</span>
+												<span class="nominal">20</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer border-0"></div>
+			</div>
+		</div>
+	</div>
+	<!-- End Of Modal Add To Cart -->
+
+
 	<footer class="text-center small" style="padding-top:80px" id="footer"></footer>
     <?php
 	if(!isset($_SESSION["Idusernya"]) || $_SESSION["Idusernya"] == ""){
@@ -383,6 +303,8 @@ session_start();
 	<script type="text/javascript" src="../component/jquery.js"></script>
 	<script type="text/javascript" src="../component/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../head.js"></script>
+	<script type="text/javascript" src="../filter-ui.js"></script>
+	<script type="text/javascript" src="../head-filter.js"></script>
 	<script type="text/javascript" src="filter.js"></script>
 	<script type="text/javascript">
 		// [].forEach.cal(ldocument.querySelectorAll("*"), function(a){a.style.outline="1px solid green";})

@@ -1,6 +1,6 @@
-var webdir = "https://www.supresso.com/id/";
-var apidir = "https://www.supresso.com/id/filter/all/";
-var imgdir = "https://www.supresso.com/id/";
+var webdir = "http://192.168.1.92/supresso-id/";
+var apidir = "http://192.168.1.92/supresso-id/api/v1/";
+var imgdir = "http://192.168.1.92/supresso-id/";
 var keyword = "";
 
 printNavbar();

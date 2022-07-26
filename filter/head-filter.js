@@ -23,14 +23,10 @@ $(document).ready(function() {
 
 });
 
-//Declared Variables
+//Declarable
 const filterarr = [];
 const filterarrfix = [];
 var sortby = "";
-var defaultdir = "../../";
-//Auto Load Functions
-navigationCart();
-
 
 //Functions
 function navigationCart(){
@@ -314,7 +310,7 @@ function filterSendAjax(){
 										        </div>
 										      </li>
 										    </ul>
-										    <button class="tombol-cart btn" data-toggle="modal" data-target="#popCart" data-id="">
+										    <button class="tombol-cart btn" onclick='showAddToCart()'>
 										      <img src="https://www.supresso.com/sg/img/ikon-shopcart-light.svg" class="img-fluid">
 										    </button>
 										  </div>
@@ -363,7 +359,7 @@ function filterSendAjax(){
 										        <span class="nominal">${hargaview},-</span>
 										      </li>
 										    </ul>
-										    <button class="tombol-cart btn" data-toggle="modal" data-target="#popCart" data-id="">
+										    <button class="tombol-cart btn" onclick='showAddToCart()'>
 										      <img src="https://www.supresso.com/sg/img/ikon-shopcart-light.svg" class="img-fluid">
 										    </button>
 										  </div>
@@ -391,15 +387,58 @@ function filterSendAjax(){
 }
 
 function formatMoney(angka) {
-    var rupiah = '';
+  var rupiah = '';
 	var angkarev = angka.toString().split('').reverse().join('');
 	for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
 	return rupiah.split('',rupiah.length-1).reverse().join('');
 }
 
-//Custom Request
-setTimeout(function(){
-    applyFixFilterFront();
-}, 1000);
+function hideAddToCart(){
+	var addtocartcontainer = document.getElementById("addtocartcontainer");
+	var addtocartcore = document.getElementById("addtocartcore");
+	addtocartcontainer.style.opacity = "0";
+	addtocartcontainer.style.visibility = "hidden";
+	addtocartcore.style.transform = "translateY(-50px)";
+}
 
-closeLoad();
+function showAddToCart(code){
+	if(userid == "" || userid == 0){
+		showMsg("No user detected!");
+		setTimeout(function(){
+			window.location.href = defaultdir;
+		},500);
+	} else if(code == ""){
+		showMsg("Error product id");
+	} else {
+		try{
+			$.ajax({
+        url: apidir + 'filter-api.php?do=getproductdata',
+        type: 'POST',
+        headers: {
+        },
+        data : {
+          iduser : userid
+        },
+        success: function(result){
+					var resultParse = JSON.parse(result);
+          var resultStatus = resultParse.status;
+          var resultMessage = resultParse.message;
+					if(resultStatus === "Success"){
+						var addtocartcontainer = document.getElementById("addtocartcontainer");
+						var addtocartcore = document.getElementById("addtocartcore");
+						addtocartcontainer.style.opacity = "1";
+						addtocartcontainer.style.visibility = "visible";
+						addtocartcore.style.transform = "translateY(0px)";
+					} else {
+						showMsg(resultMessage);
+					}
+				},
+				error: function(error){
+            console.log(error);
+        }
+      });
+		} catch(e){
+			console.log(e);
+		}
+	}
+}
