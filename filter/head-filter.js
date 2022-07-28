@@ -26,6 +26,7 @@ $(document).ready(function() {
 //Declarable
 const filterarr = [];
 const filterarrfix = [];
+const filterhide = [];
 var sortby = "";
 
 //Functions
@@ -96,10 +97,18 @@ function printFilterFront(){
 	var pid = 0;
 	while(pid < totalfilterarray){
 		var thisshow = filterarrfix[pid];
-		var frontCache = `
-		<button onclick='removeFilter("${thisshow}")' class="btn btn-sm btn-light my-1">${thisshow} <i class="bi bi-x-circle"></i></button>
-		`;
-		frontHTML = frontHTML + frontCache;
+		var filtertarg = filterhide.indexOf(thisshow);
+		if(filtertarg == -1){
+			var idtargetname = thisshow;
+			idtargetname = idtargetname.replace(" ", "");
+			idtargetname = idtargetname.replace(":", "");
+			idtargetname = idtargetname.toLowerCase();
+			idtargetname = "frontselect" + idtargetname;
+			var frontCache = `
+			<button id='${idtargetname}' onclick='removeFilter("${thisshow}")' class="btn btn-sm btn-light my-1">${thisshow} <i class="bi bi-x-circle"></i></button>
+			`;
+			frontHTML = frontHTML + frontCache;
+		}
 		pid++;
 	}
 	document.getElementById("filterselectedlistfront").innerHTML = frontHTML;
@@ -111,31 +120,40 @@ function printFilterInside(){
 	var pid = 0;
 	while(pid < totalfilterarray){
 		var thisshow = filterarr[pid];
-		var insideCache = `
-		<button onclick='applyFilter("${thisshow}")' class="btn btn-sm btn-light my-1">${thisshow} <i class="bi bi-x-circle"></i></button>
-		`;
-		insideHTML = insideHTML + insideCache;
+		var filtertarg = filterhide.indexOf(thisshow);
+		if(filtertarg == -1){
+			var idtargetname = thisshow;
+			idtargetname = idtargetname.replace(" ", "");
+			idtargetname = idtargetname.replace(":", "");
+			idtargetname = idtargetname.toLowerCase();
+			idtargetname = "insideselect" + idtargetname;
+			var insideCache = `
+			<button id="${idtargetname}" onclick='applyFilter("${thisshow}")' class="btn btn-sm btn-light my-1">${thisshow} <i class="bi bi-x-circle"></i></button>
+			`;
+			insideHTML = insideHTML + insideCache;
+		}
 		pid++;
 	}
 	document.getElementById("filterselectedlistinside").innerHTML = insideHTML;
 }
 
 function resetFilter(){
-	var totalfilterarray = filterarr.length;
-	var pid = 0;
-	while(pid < totalfilterarray){
-		var idtarget = "";
-		var thiscode = filterarr[pid];
-		var thiscodemod = filterarr[pid];
-		idtarget = thiscodemod;
-		idtarget = idtarget.replace(':', '');
-		idtarget = idtarget.replace(' ', '');
-		document.getElementById(idtarget).checked = false;
-		//filterarr.splice(thiscode, 1);
-		pid++;
-	}
-	filterarr.length = 0;
-	printFilterInside();
+	location.reload();
+	// var totalfilterarray = filterarr.length;
+	// var pid = 0;
+	// while(pid < totalfilterarray){
+	// 	var idtarget = "";
+	// 	var thiscode = filterarr[pid];
+	// 	var thiscodemod = filterarr[pid];
+	// 	idtarget = thiscodemod;
+	// 	idtarget = idtarget.replace(':', '');
+	// 	idtarget = idtarget.replace(' ', '');
+	// 	document.getElementById(idtarget).checked = false;
+	// 	//filterarr.splice(thiscode, 1);
+	// 	pid++;
+	// }
+	// filterarr.length = 0;
+	// printFilterInside();
 }
 
 
@@ -440,5 +458,28 @@ function showAddToCart(code){
 		} catch(e){
 			console.log(e);
 		}
+	}
+}
+
+function removeFilterContainer(code){
+	if(code == ""){
+		showMsg("Filter Code is Empty!");
+	} else {
+		var idtarget = "container" + code;
+		var target = document.getElementById(idtarget);
+		target.style.display = "none";
+	}
+}
+
+function applyPageCondition(code){
+	if(code == ""){
+		showMsg("hide filter error code is empty!");
+	} else {
+		filterhide.push(code);
+		var index = filterarr.indexOf(code);
+		var idtarget = code.replace(':', '');
+		var idtarget = idtarget.replace(' ', '');
+		filterarr.push(code);
+		document.getElementById(idtarget).checked = true;
 	}
 }

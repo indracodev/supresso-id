@@ -110,8 +110,8 @@ function printNavbar(){
 							</ul>
 						</li>
 						<li class="nav-item submenu">
-							<a class="nav-link submenu-link" data-toggle="collapse" data-target="#menuCapsules" href="${webdir}filter/bundles/">BUNDLES</a>
-							<ul class="list-unstyled collapse collapse-submenu pl-4 pl-xl-0" id="menuCapsules" data-parent="#coffeeMenu">
+							<a class="nav-link submenu-link" data-toggle="collapse" data-target="#menuBundles" href="${webdir}filter/bundles/">BUNDLES</a>
+							<ul class="list-unstyled collapse collapse-submenu pl-4 pl-xl-0" id="menuBundles" data-parent="#coffeeMenu">
 								<li class="nav-item">
 									<a class="nav-link" href="${webdir}filter/bundles/bundle-set/">Bundle Set</a>
 								</li>

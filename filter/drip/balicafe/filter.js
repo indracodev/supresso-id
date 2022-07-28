@@ -1,8 +1,13 @@
 var defaultdir = "../../../";
-applyFilter("Collection:Balicafe");
-applyFilter("Packaging:Drip");
+applyPageCondition("Collection:Balicafe");
+applyPageCondition("Packaging:Drip");
 applyFixFilterFront();
 closeLoad();
 setTimeout(function(){
     navigationCart();
 }, 1000);
+
+removeFilterContainer("collection");
+removeFilterContainer("form");
+removeFilterContainer("packaging");
+removeFilterContainer("weight");

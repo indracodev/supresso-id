@@ -1,8 +1,14 @@
 var defaultdir = "../../../";
-applyFilter("Collection:World Blend")
-applyFilter("Packaging:Drip");
+applyPageCondition("Collection:World Blend")
+applyPageCondition("Packaging:Drip");
 applyFixFilterFront();
 closeLoad();
 setTimeout(function(){
     navigationCart();
 }, 1000);
+
+removeFilterContainer("collection");
+removeFilterContainer("type");
+removeFilterContainer("form");
+removeFilterContainer("packaging");
+removeFilterContainer("weight");

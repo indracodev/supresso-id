@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head lang="en" id="head">
-	<title>Filters | Supresso</title>
+	<title>Coffee Capsules | Supresso</title>
 	<link rel="stylesheet icon" href="../../img/ikon-supresso.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,7 +45,7 @@ session_start();
 				<header>
 					<div class="row align-items-center">
 						<div class="col">
-							<h4 class="gotham-bold m-0">Coffee Collection</h4>
+							<h4 class="gotham-bold m-0">Coffee Capsules</h4>
 						</div>
 
 						<div class="col-12 hasil-filter order-lg-2">

@@ -1,8 +1,18 @@
 var defaultdir = "../../../";
-applyFilter("Form:Beans");
-applyFilter("Collection:Balicafe");
+applyPageCondition("Form:Beans");
+applyPageCondition("Collection:Balicafe");
 applyFixFilterFront();
 closeLoad();
 setTimeout(function(){
     navigationCart();
 }, 1000);
+
+removeFilterContainer("collection");
+removeFilterContainer("form");
+removeFilterContainer("packagingdrip");
+removeFilterContainer("packagingcapsule");
+removeFilterContainer("packagingbox");
+removeFilterContainer("weight30g");
+removeFilterContainer("weight50g");
+removeFilterContainer("weight60g");
+removeFilterContainer("weight100g");

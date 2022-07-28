@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head lang="en" id="head">
-	<title>Filters | Supresso</title>
+	<title>All Variants | Supresso</title>
 	<link rel="stylesheet icon" href="../../img/ikon-supresso.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
