@@ -1,5 +1,4 @@
 var defaultdir = "../../../";
-applyPageCondition("Form:Beans");
 applyPageCondition("Collection:Bundle");
 applyFixFilterFront();
 closeLoad();

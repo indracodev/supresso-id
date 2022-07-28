@@ -101,7 +101,7 @@ if($do == "getcart"){
         $pidArray++;
       }
       //Assembly SQL
-      $sql = "SELECT * FROM masterproduk WHERE status = 'aktif' ";
+      $sql = "SELECT * FROM masterproduk WHERE status = 'aktif' AND categoryname != 'machine' ";
       if($filterCollection != ""){
         $sql = $sql."AND categoryname REGEXP '".$filterCollection."' ";
       }
@@ -159,7 +159,7 @@ if($do == "getcart"){
     }
   }
 } else if($do == "getproductdata"){
-  
+
 } else {
   $pesan = "Sorry! no action detected!";
 }
